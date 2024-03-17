@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    font-size: 14px;
+}
+
+header{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255); /*cor do fundo*/
+    color: #000000; /*cor das demais coisas do header*/
+}
+
+header #particles{
+    position: absolute;
+    width: 1880px;
+    top: 2px;
+    left: 10px;
+}
+
+header .info-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    height: 100vh;
+}
+
+header img{
+    
+    width: 50%; /* Define a largura da imagem como 50% da largura da tela */
+    max-width: 550px; /* Define a largura máxima da imagem como 400 pixels */
+    height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção da imagem */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -250px;
+}
+
+header .info-text h3{
+    font-size: 1.5rem;
+    position: absolute;
+    top: 720px;
+}
+
+header .info-text .scroll{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    color: #000000;
+    transform: translate(0, -50%);
+    transition: all 0.5s;
+}
+
+header .info-text .scroll:hover{
+    opacity: 0.7;
+}
+
+header .info-text .scroll::before{
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    z-index: -1;
+    content: '';
+    width: 44px;
+    height: 44px;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    border-radius: 100%;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100%{
+        opacity: 0;
+    }
+    15%, 45%{
+        opacity: 1;
+    }
+    60%{
+        box-shadow: 0 0 0 30px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+    }
+}
+
+#about{
+    background-color: #2b2f4b;
+    padding: 40px;
+    display: none;
+}
+
+#about .header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+#about .header h1{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#about .header a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: 10px 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#about .header a:hover{
+    border-color: #fff;
+    box-shadow: none;
+}
+
+#about .card{
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 20px;
+    display: flex;
+    gap: 30px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+#about .card:hover{
+    border-color: #fff;
+    box-shadow: none;
+}
+
+#about .card img{
+    max-width: 200px;
+    max-height: 200px;
+}
+
+#about .card .info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#about .card .info h1{
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    font-family: 'Ubuntu';
+}
+
+#about .card .info p{
+    color: #ccc;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+
+/*-----------------------------------------------------------------*/
+
+.conteiner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 5px;
+    transition: transform 0.7s ease;
+}
+
+
+.conteiner.aberto {
+    transform: translate(-50%, -50%) scale(1);
+
+    background-color: rgba(255, 255, 255, 0.0);
+    display: block;
+    width: 1100px;
+    height: 850px;
+    border-radius: 50px;   
+
+}
+
+
+
+.close_conteiner{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    cursor: pointer;
+    background: transparent; 
+    border: none;
+}
+
+
+
+
+.perfil{
+    color: rgb(0, 0, 0);
+    padding: 10px ;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    position: absolute;
+    bottom: 60px;
+    width: 870px;
+    height: 180px;
+
+    
+    left: 50%; /* Posiciona o elemento no meio da tela horizontalmente */
+    transform: translateX(-50%); /* Centraliza o elemento */
+
+    text-align: center;
+
+
+}
+
+.perfil p{
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+
+
+.foto_perfil{
+    width: 50%; /* Define a largura da imagem como 50% da largura da tela */
+    max-width: 448px; /* Define a largura máxima da imagem como 400 pixels */
+    height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção da imagem */
+
+    border-radius: 100%;
+    
+    position: fixed;
+    top: 549px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /*
+    width: 50%; /* Define a largura da imagem como 50% da largura da tela 
+    max-width: 550px; /* Define a largura máxima da imagem como 400 pixels 
+    height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção da imagem 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -250px;
+    
+
+    width: 450px;
+    height: 460px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -100px;
+    */
+}
+
+
+
+
+/*
+.scroll-top{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2b2f4b;
+    color: #fff;
+    border: 1px solid transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    padding: 16px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.scroll-top:hover{
+    border-color: #fff;
+    box-shadow: none;
+}
+*/
+@media screen and (max-width: 720px) {
+    header .info-text h1{
+        font-size: 4rem;
+    }
+
+    header .info-text h3{
+        font-size: 1.1rem;
+    }
+
+    #about .card{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .card img{
+        max-width: 150px;
+        max-height: 150px;
+    }
+
+}
+
+
+
+
+/* descrição da minha foto */
+
+.item-hints {
+    --purple: #720c8f;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 170px;
+  }
+  .item-hints .hint {
+    margin: 150px auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .item-hints .hint-radius {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -125px 0 0 -125px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  .item-hints .hint[data-position="1"] .hint-content {
+    top: 85px;
+    left: 50%;
+    margin-left: 56px;
+  }
+  .item-hints .hint-content {
+    width: 300px; 
+    position: absolute;
+    text-align: center;
+    z-index: 5;
+    padding: 35px 0;
+    opacity: 0;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    color: #000000;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .item-hints .hint:hover .hint-content {
+    position: absolute;
+    z-index: 5;
+    padding: 35px 0;
+    opacity: 1;
+    -webkit-transition: opacity 0.7s ease, visibility 0.7s ease;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
+    color: #000000;
+    visibility: visible;
+    pointer-events: none;
+  }
+  .item-hints .hint-content::before {
+    width: 0px;
+    bottom: 29px;
+    left: 0;
+    content: "";
+    background-color: #000000;
+    height: 1px;
+    position: absolute;
+    transition: width 0.4s;
+  }
+  .item-hints .hint:hover .hint-content::before {
+    width: 290px;
+    transition: width 0.4s;
+  }
+  .item-hints .hint-content::after {
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+    bottom: 29px;
+    left: 0;
+    width: 80px;
+    content: "";
+    background-color: #000000;
+    height: 1px;
+    position: absolute;
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+  }
+  .item-hints .hint:hover .hint-content::after {
+    opacity: 1;
+    visibility: visible;
+  }
+  .item-hints .hint[data-position="4"] .hint-content {
+    bottom: 45px;
+    left: 50%;
+    margin-left: 230px;
+  }
+
+
+
+
+/*botoes das redes sociais  - modo 1*/
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; 
+    margin: 0 50px;
+    width: 300px;
+    position: absolute;
+    left: 230px;
+  }
+
+
+.Btn {
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: .4s;
+    cursor: pointer;
+    position: relative;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.Btn:hover {
+    width: 110px;
+    transition-duration: .4s;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+.Btn:hover .text {
+    opacity: 1;
+    transition-duration: .4s;
+    text-decoration: none;
+}
+
+.Btn:hover .svgIcon {
+    opacity: 0;
+    transition-duration: .3s;
+    text-decoration: none;
+}
+
+.svgIcon {
+    transition-duration: .3s;
+}
+
+.svgIcon path {
+    fill: white;
+}
+
+.text {
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 120px;
+    font-weight: 600;
+    opacity: 0;
+    transition-duration: .4s;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
